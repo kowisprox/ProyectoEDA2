@@ -8,17 +8,18 @@ using namespace std;
 
 class HashPacientes {
 private:
-    int capacidad   ;
-    Paciente* tabla    ;
+    int capacidad;
+    Paciente* tabla;
+    Paciente P_NoEncontrado;
 
     int hashFuncion(int id);
 
 public:
     HashPacientes(int tam = 1007);
 
-    void insertar(int id, string nombre, int urgencia);
+    void insertar(int id, string nombre, int urgencia, string estado);
 
-    Paciente buscar(int id);
+    Paciente& buscar(int id);
 };
 
 #endif

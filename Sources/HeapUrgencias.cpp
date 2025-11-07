@@ -58,7 +58,7 @@ void HeapUrgencias::insertar(const Paciente& p) {
 Paciente HeapUrgencias::extraerMax() {
     if (size == 0) {
         cout << " No hay pacientes en espera.\n";
-        return {-1, "Ninguno", -1};
+        return {-1, "Ninguno", -1, "No existe"};
     }
 
     Paciente maximo = heap[0];
@@ -71,7 +71,7 @@ Paciente HeapUrgencias::extraerMax() {
 
 Paciente HeapUrgencias::verMax() const {
     if (size == 0)
-        return {-1, "Ninguno", -1};
+        return {-1, "Ninguno", -1,"No existe"};
     return heap[0];
 }
 

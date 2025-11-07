@@ -16,7 +16,7 @@
 1762483718 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\tablahash.h
 	<iostream>
 
-1762483615 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\heapurgencias.cpp
+1762497983 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\heapurgencias.cpp
 	"HeapUrgencias.h"
 	"Paciente.h"
 
@@ -26,22 +26,22 @@
 	<iostream>
 	<algorithm>
 
-1762484041 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\paciente.h
+1762497228 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\paciente.h
 	<iostream>
 	<string>
 
-1762485377 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\hashpacientes.h
+1762498487 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\hashpacientes.h
 	"Paciente.h"
 	<string>
 
-1762484347 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\main.cpp
+1762495053 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>
 	"HashPacientes.h"
 	"HeapUrgencias.h"
 
-1762485558 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\hashpacientes.cpp
+1762498473 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\hashpacientes.cpp
 	"HashPacientes.h"
 	<iostream>
 

@@ -15,6 +15,7 @@ void cargarPacientesDesdeArchivo(const string& nombreArchivo, HashPacientes &has
     string linea;
     int id, urgencia;
     string nombre;
+    string estado = "En espera";
 
     while (getline(archivo, linea)) {
         if (linea.empty()) continue;
@@ -30,8 +31,8 @@ void cargarPacientesDesdeArchivo(const string& nombreArchivo, HashPacientes &has
         nombre = nombreStr;
         urgencia = stoi(urgenciaStr);
 
-        hash.insertar(id, nombre, urgencia);
-        heap.insertar({id, nombre, urgencia});
+        hash.insertar(id, nombre, urgencia, estado);
+        heap.insertar({id, nombre, urgencia, estado});
     }
 
     archivo.close();
@@ -41,24 +42,101 @@ void cargarPacientesDesdeArchivo(const string& nombreArchivo, HashPacientes &has
 int main() {
     HashPacientes hash(10007);
     HeapUrgencias heap(10000);
+    string respuesta;
 
-    cargarPacientesDesdeArchivo("pacientesEDA.txt", hash, heap);
+    cout << "\n--------------------------------\n";
+    cout << "  SISTEMA DE TRIAGE HOSPITALARIO\n";
+    cout << "----------------------------------\n";
 
+    cout << "Desea cargar los pacientes desde el archivo? (si/no): ";
+    cin >> respuesta;
 
-    while (!heap.estaVacio()) {
-        Paciente p = heap.extraerMax();
-        Paciente datos = hash.buscar(p.idPaciente);
-        cout << "Atendiendo a: " << datos.nombre
-             << " (Urgencia " << datos.nivelUrgencia << ")\n";
+    if (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
+        cargarPacientesDesdeArchivo("pacientesEDA.txt", hash, heap);
+
+    } else {
+        cout << "No se cargaron pacientes. Saliendo del sistema...\n";
+        return 0;
     }
 
-        cout << "\n--- PRUEBA DE BUSQUEDA ---\n";
-    int idBuscado = 1007; // cambia por un ID real del archivo
-    Paciente encontrado = hash.buscar(idBuscado);
-    if (encontrado.idPaciente != -1)
-        cout << "Paciente encontrado: " << encontrado.nombre << " (Urgencia " << encontrado.nivelUrgencia << ")\n";
-    else
-        cout << "Paciente con ID " << idBuscado << " no encontrado.\n";
+        int opcion;
+    do {
+        cout<<"\n--------------------------------\n";
+        cout<<"  SISTEMA DE TRIAGE HOSPITALARIO\n";
+        cout<<"----------------------------------\n";
+        cout<<"1. Buscar paciente por ID\n";
+        cout<<"2. Atender siguiente paciente (maxima urgencia)\n";
+        cout<<"3. Atender multiples pacientes \n";
+        cout<<"4. Mostrar cantidad pendiente\n";
+        cout<<"5. Salir\n";
+        cout<<"------------------------------\n";
+        cout<<"Seleccione una opcion: ";
+        cin>>opcion;
+        cout<<endl;
+
+        switch (opcion) {
+            case 1: {
+                int idBuscado;
+                cout<<"\nIngrese el ID del paciente: ";
+                cin>>idBuscado;
+                Paciente encontrado = hash.buscar(idBuscado);
+                if (encontrado.idPaciente != -1)
+                    cout<<"Paciente encontrado: "<<encontrado.nombre<<" (Urgencia: "<<encontrado.nivelUrgencia<<"), Estado: "<<encontrado.estado<<"\n";
+                else
+                    cout<<"El Paciente con el ID:"<<idBuscado<<" no existe\n";
+                break;
+            }
+            case 2: {
+                if (heap.estaVacio()) {
+                    cout<<"No hay pacientes pendientes\n";
+                } else {
+                    Paciente pHeap = heap.extraerMax();
+                    Paciente &pHash = hash.buscar(pHeap.idPaciente);
+                    pHash.estado = "Atendido";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                }
+                break;
+            }
+            case 3:
+                if (heap.estaVacio()) {
+                    cout << "No hay pacientes pendientes\n";
+                    break;
+                    }
+
+                int cantidad;
+                cout << "Ingrese la cantidad de pacientes a atender (0 para todos): ";
+                cin >> cantidad;
+
+                if (cantidad == 0) {
+                    while (!heap.estaVacio()) {
+                    Paciente pHeap = heap.extraerMax();
+                    Paciente &pHash = hash.buscar(pHeap.idPaciente);
+                    pHash.estado = "Atendido";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                        }
+                }
+                else{
+                    for (int i = 0; i < cantidad && !heap.estaVacio(); i++) {
+                    Paciente pHeap = heap.extraerMax();
+                    Paciente &pHash = hash.buscar(pHeap.idPaciente);
+                    pHash.estado = "Atendido";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                            }
+                        }
+                    break;
+            case 4:
+                cout<<"Pacientes restantes por atender: "<<heap.getSize()<< endl;
+                break;
+            case 5:
+                cout<<"\nSaliendo del sistema...\n";
+                break;
+            default:
+                cout<<"Opcion no valida. Intente nuevamente.\n";
+        }
+
+    }while(opcion != 5);
 
     return 0;
 }
+
+

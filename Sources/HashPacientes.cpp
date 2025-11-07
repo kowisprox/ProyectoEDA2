@@ -8,17 +8,19 @@ HashPacientes::HashPacientes(int capacidad) {
     for (int i = 0; i < capacidad; i++) {
         tabla[i].idPaciente = -1;
     }
+
+    P_NoEncontrado = {-1, "No encontrado", -1, "No existe"};
 }
 
-void HashPacientes::insertar(int id, string nombre, int urgencia) {
+void HashPacientes::insertar(int id, string nombre, int urgencia, string estado) {
     int index = id % capacidad;
     while (tabla[index].idPaciente != -1) {
         index = (index + 1) % capacidad;
     }
-    tabla[index] = {id, nombre, urgencia};
+    tabla[index] = {id, nombre, urgencia, estado};
 }
 
-Paciente HashPacientes::buscar(int id) {
+Paciente& HashPacientes::buscar(int id) {
     int index = id % capacidad;
     int start = index;
     while (tabla[index].idPaciente != -1) {
@@ -27,6 +29,6 @@ Paciente HashPacientes::buscar(int id) {
         index = (index + 1) % capacidad;
         if (index == start) break;
     }
-    return {-1, "No encontrado", -1};
+    return P_NoEncontrado;
 }
 
