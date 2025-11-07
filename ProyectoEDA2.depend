@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1762484651 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\avl.cpp
+	"ArbolAVL.h"
+	<iostream>
+	<algorithm>
+
+1762483656 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\arbolavl.h
+	<iostream>
+	<algorithm>
+
+1762484651 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\hash.cpp
+	"TablaHash.h"
+	<iostream>
+	<cmath>
+
+1762483718 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\tablahash.h
+	<iostream>
+
+1762483615 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\heapurgencias.cpp
+	"HeapUrgencias.h"
+	"Paciente.h"
+
+1762483692 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\heapurgencias.h
+	"Paciente.h"
+	"HashPacientes.h"
+	<iostream>
+	<algorithm>
+
+1762484041 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\paciente.h
+	<iostream>
+	<string>
+
+1762485377 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\hashpacientes.h
+	"Paciente.h"
+	<string>
+
+1762484347 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	"HashPacientes.h"
+	"HeapUrgencias.h"
+
+1762485558 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\hashpacientes.cpp
+	"HashPacientes.h"
+	<iostream>
+
