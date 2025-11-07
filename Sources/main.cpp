@@ -40,7 +40,7 @@ void cargarPacientesDesdeArchivo(const string& nombreArchivo, HashPacientes &has
 }
 
 int main() {
-    HashPacientes hash(10007);
+    HashPacientes hash(10000);
     HeapUrgencias heap(10000);
     string respuesta;
 
@@ -51,7 +51,7 @@ int main() {
     cout << "Desea cargar los pacientes desde el archivo? (si/no): ";
     cin >> respuesta;
 
-    if (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
+    if (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI"|| respuesta == "sí"|| respuesta == "Sí"|| respuesta == "SÍ"|| respuesta == "sÍ") {
         cargarPacientesDesdeArchivo("pacientesEDA.txt", hash, heap);
 
     } else {
@@ -93,7 +93,7 @@ int main() {
                     Paciente pHeap = heap.extraerMax();
                     Paciente &pHash = hash.buscar(pHeap.idPaciente);
                     pHash.estado = "Atendido";
-                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<"con ID: "<<pHash.idPaciente<<"(Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
                 }
                 break;
             }
@@ -112,7 +112,7 @@ int main() {
                     Paciente pHeap = heap.extraerMax();
                     Paciente &pHash = hash.buscar(pHeap.idPaciente);
                     pHash.estado = "Atendido";
-                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<"con ID: "<<pHash.idPaciente<<"(Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
                         }
                 }
                 else{
@@ -120,7 +120,7 @@ int main() {
                     Paciente pHeap = heap.extraerMax();
                     Paciente &pHash = hash.buscar(pHeap.idPaciente);
                     pHash.estado = "Atendido";
-                    cout<<"Atendiendo a: "<<pHash.nombre<<" (Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
+                    cout<<"Atendiendo a: "<<pHash.nombre<<"con ID: "<<pHash.idPaciente<<"(Urgencia "<<pHash.nivelUrgencia<<"), Estado: "<<pHash.estado<<"\n";
                             }
                         }
                     break;

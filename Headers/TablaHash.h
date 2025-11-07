@@ -5,7 +5,6 @@
 
 using namespace std;
 
-// Lo llamo "TablaHash" para que coincida con tu código
 class TablaHash {
 private:
     int* tabla;
@@ -13,22 +12,19 @@ private:
     int colisiones;
     int elementos;
 
-    // Funciones privadas
     int funcionHash(int clave);
     int funcionHashNegativa(int clave);
-    int funcionHash2(int clave); // Esta es la que usas (multiplicación)
+    int funcionHash2(int clave);
 
 public:
-    TablaHash(int t); // Constructor
-    ~TablaHash(); // Destructor (¡importante!)
+    TablaHash(int t);
+    ~TablaHash();
 
     float factorCarga();
     void insertar(int clave);
     int numeroColisiones();
     void imprimir();
 
-    // Necesitarás una función de búsqueda para tu proyecto
-    // bool buscar(int clave);
 };
 
 #endif // TABLAHASH_H
