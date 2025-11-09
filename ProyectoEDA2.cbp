@@ -33,14 +33,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Headers/ArbolAVL.h" />
+		<Unit filename="Headers/ArbolCitas.h" />
 		<Unit filename="Headers/HashPacientes.h" />
 		<Unit filename="Headers/HeapUrgencias.h" />
 		<Unit filename="Headers/Paciente.h" />
+		<Unit filename="Headers/RedMain.h" />
 		<Unit filename="Headers/TablaHash.h" />
+		<Unit filename="Sources/ArbolCitas.cpp" />
 		<Unit filename="Sources/HashPacientes.cpp" />
 		<Unit filename="Sources/HeapUrgencias.cpp" />
-		<Unit filename="Sources/avl.cpp" />
+		<Unit filename="Sources/RedMain.cpp" />
 		<Unit filename="Sources/hash.cpp" />
 		<Unit filename="Sources/main.cpp" />
 		<Extensions />

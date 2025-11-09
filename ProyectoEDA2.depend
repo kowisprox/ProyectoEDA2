@@ -45,3 +45,111 @@
 	"HashPacientes.h"
 	<iostream>
 
+1762532781 source:c:\users\l34119\desktop\paaaa\proyectoeda2\sources\hash.cpp
+	"TablaHash.h"
+	<iostream>
+	<cmath>
+
+1762532781 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\tablahash.h
+	<iostream>
+
+1762532781 source:c:\users\l34119\desktop\paaaa\proyectoeda2\sources\hashpacientes.cpp
+	"HashPacientes.h"
+	<iostream>
+
+1762532781 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\hashpacientes.h
+	"Paciente.h"
+	<string>
+
+1762532781 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\paciente.h
+	<iostream>
+	<string>
+
+1762532781 source:c:\users\l34119\desktop\paaaa\proyectoeda2\sources\heapurgencias.cpp
+	"HeapUrgencias.h"
+	"Paciente.h"
+
+1762532781 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\heapurgencias.h
+	"Paciente.h"
+	"HashPacientes.h"
+	<iostream>
+	<algorithm>
+
+1762534975 source:c:\users\l34119\desktop\paaaa\proyectoeda2\sources\avl.cpp
+	"ArbolAVL.h"
+	<iostream>
+	<algorithm>
+
+1762534958 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\arbolavl.h
+	<iostream>
+	<string>
+	<algorithm>
+	"Paciente.h"
+
+1762535601 source:c:\users\l34119\desktop\paaaa\proyectoeda2\sources\arbolcitas.cpp
+	"ArbolCitas.h"
+	<iostream>
+	<algorithm>
+
+1762535565 c:\users\l34119\desktop\paaaa\proyectoeda2\headers\arbolcitas.h
+	<iostream>
+	<string>
+	<algorithm>
+	"Paciente.h"
+
+1762656064 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\arbolcitas.cpp
+	"ArbolCitas.h"
+	<iostream>
+	<algorithm>
+
+1762656107 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\arbolcitas.h
+	<iostream>
+	<string>
+	<algorithm>
+	"Paciente.h"
+
+1762651760 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\paciente.h
+	<iostream>
+	<string>
+
+1762651760 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\hash.cpp
+	"TablaHash.h"
+	<iostream>
+	<cmath>
+
+1762651760 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\tablahash.h
+	<iostream>
+
+1762651760 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\hashpacientes.cpp
+	"HashPacientes.h"
+	<iostream>
+
+1762651760 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\hashpacientes.h
+	"Paciente.h"
+	<string>
+
+1762651760 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\heapurgencias.cpp
+	"HeapUrgencias.h"
+	"Paciente.h"
+
+1762651760 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\heapurgencias.h
+	"Paciente.h"
+	"HashPacientes.h"
+	<iostream>
+	<algorithm>
+
+1762656164 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\main.cpp
+	"RedMain.h"
+
+1762656154 c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\headers\redmain.h
+	<iostream>
+	<string>
+	"HashPacientes.h"
+	"HeapUrgencias.h"
+	"ArbolCitas.h"
+
+1762656221 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\redmain.cpp
+	"RedMain.h"
+	<fstream>
+	<sstream>
+
