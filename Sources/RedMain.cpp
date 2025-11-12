@@ -106,14 +106,20 @@ void RedMain::atenderYAgendar() {
     Paciente &pHash = hash.buscar(pHeap.idPaciente);
     pHash.estado = "Atendido";
     cout<<"Atendiendo a: "<<pHash.nombre<<" con ID: "<<pHash.idPaciente<<" (Urgencia "<<pHash.nivelUrgencia<<")\n";
+    cout << "Estado actualizado: " << pHash.estado << "\n";
 
-    while (true) {
+    bool citaAgendada = false;
+
+    while (!citaAgendada) {
         int nuevaLlave = generarLlaveCita();
         int horaCita = (int)(nuevaLlave % 10000);
         Cita nuevaCita(nuevaLlave, pHash.idPaciente, pHash.nombre);
 
         if (arbolCitas.insertarCita(nuevaCita)) {
             cout << "Agendando cita de seguimiento para Dia " << diaActual << ", Hora " << horaCita << "...\n";
+            citaAgendada = true;
+            pHash.estado = "Con cita programada";
+            cout << "Estado actualizado: " << pHash.estado << "\n";
             avanzarProximaCita();
             break;
         } else {
@@ -170,11 +176,23 @@ void RedMain::opcionAtenderN() {
     cout << "Ingrese la cantidad de pacientes a atender (ej: 2000): ";
     int cantidad;
     cin >> cantidad;
-    cout << "\nIniciando atencion masiva...\n";
-    for (int i = 0; i < cantidad && !heap.estaVacio(); i++) {
-        atenderYAgendar();
+    if(cantidad != 0 && cantidad <= heap.getSize()){
+    cout << "\nIniciando atencion de "<<cantidad<<" pacientes ...\n";
+        for (int i = 0; i < cantidad && !heap.estaVacio(); i++) {
+            atenderYAgendar();
+                }
+    cout << "\nAtencion terminada.\n";
+    }else if(cantidad != 0 && cantidad > heap.getSize()){
+        cout << "\nCantidad ingresada es superior al maximo. Iniciando atencion con los "<<heap.getSize()<<" pacientes restantes ...\n";
+        for (int i = 0; !heap.estaVacio(); i++) {
+            atenderYAgendar();
+                }
+    cout << "\nAtencion terminada.\n";
     }
-    cout << "\nAtencion masiva terminada.\n";
+    else{
+    cout<<"\nNo se ingreso ninguna cantidad de pacientes para atender.\n";
+    }
+
 }
 
 void RedMain::opcionReprogramarCita() {
@@ -234,6 +252,9 @@ void RedMain::opcionCancelarCita() {
     cout << "Cita encontrada y lista para cancelar:\n";
     cout << "  Paciente: " << citaActual.nombrePaciente << " (ID: " << citaActual.idPaciente << ")\n";
     cout << "  Dia: " << (citaActual.horaDiaKey / 10000) << ", Hora: " << (int)(citaActual.horaDiaKey % 10000) << "\n";
+
+    Paciente &pHash = hash.buscar(idPac);
+    pHash.estado = "Cita Cancelada";
 
     arbolCitas.cancelarCita(citaActual.horaDiaKey);
 

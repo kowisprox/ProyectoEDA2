@@ -34,12 +34,8 @@
 	"Paciente.h"
 	<string>
 
-1762530600 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\main.cpp
-	<iostream>
-	<fstream>
-	<sstream>
-	"HashPacientes.h"
-	"HeapUrgencias.h"
+1762910020 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\main.cpp
+	"RedMain.h"
 
 1762498473 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\hashpacientes.cpp
 	"HashPacientes.h"
@@ -149,6 +145,29 @@
 	"ArbolCitas.h"
 
 1762656221 source:c:\users\rael chang\downloads\paaaa\paaaa\proyectoeda2\sources\redmain.cpp
+	"RedMain.h"
+	<fstream>
+	<sstream>
+
+1762910020 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\arbolcitas.cpp
+	"ArbolCitas.h"
+	<iostream>
+	<algorithm>
+
+1762910020 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\arbolcitas.h
+	<iostream>
+	<string>
+	<algorithm>
+	"Paciente.h"
+
+1762910020 c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\headers\redmain.h
+	<iostream>
+	<string>
+	"HashPacientes.h"
+	"HeapUrgencias.h"
+	"ArbolCitas.h"
+
+1762911636 source:c:\users\nicol\onedrive\documentos\ulima\ciclo vi\eda ii\proyectoedaa\proyectoeda2\sources\redmain.cpp
 	"RedMain.h"
 	<fstream>
 	<sstream>
