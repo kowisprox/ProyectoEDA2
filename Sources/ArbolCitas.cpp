@@ -58,12 +58,12 @@ bool ArbolCitas::insertar(Node*& nodo, Cita nuevaCita) {
     return true;
 }
 
-// --- Función de Eliminación (Modificada para int) ---
+// FunciÃ³n de eliminaciÃ³n 
 Node* ArbolCitas::encontrarMin(Node* nodo) {
     while (nodo->izquierda != nullptr) { nodo = nodo->izquierda; }
     return nodo;
 }
-void ArbolCitas::eliminar(Node*& nodo, int horaDiaKey) { // <-- CAMBIO: usa int
+void ArbolCitas::eliminar(Node*& nodo, int horaDiaKey) { 
     if (nodo == nullptr) return;
     if (horaDiaKey < nodo->datosCita.horaDiaKey) { eliminar(nodo->izquierda, horaDiaKey); }
     else if (horaDiaKey > nodo->datosCita.horaDiaKey) { eliminar(nodo->derecha, horaDiaKey); }
@@ -87,11 +87,11 @@ void ArbolCitas::eliminar(Node*& nodo, int horaDiaKey) { // <-- CAMBIO: usa int
     if (facBalance < -1 && factorBalance(nodo->derecha) > 0) { nodo->derecha = rotacionDerecha(nodo->derecha); nodo = rotacionIzquierda(nodo); }
 }
 
-// --- Funciones Públicas (Modificadas para int) ---
+// Funciones pÃºblicas
 bool ArbolCitas::insertarCita(Cita nuevaCita) { return insertar(raiz, nuevaCita); }
-void ArbolCitas::cancelarCita(int horaDiaKey) { eliminar(raiz, horaDiaKey); } // <-- CAMBIO: usa int
+void ArbolCitas::cancelarCita(int horaDiaKey) { eliminar(raiz, horaDiaKey); }
 
-// --- Funciones de Impresión (Modificadas) ---
+// Funciones de impresiÃ³n
 void ArbolCitas::inorder(Node* nodo) {
     if (nodo != nullptr) {
         inorder(nodo->izquierda);
@@ -114,7 +114,7 @@ void ArbolCitas::mostrarCitasOrdenadas() {
     cout << "------------------------------------ \n";
 }
 
-// --- Búsqueda por ID (Sin Cambios) ---
+// BÃºsqueda por ID 
 void ArbolCitas::buscarRecursivo(Node* nodo, int idPaciente, Cita& resultado) {
     if (nodo == nullptr || resultado.horaDiaKey != -1) { return; }
     if (nodo->datosCita.idPaciente == idPaciente) { resultado = nodo->datosCita; return; }

@@ -1,21 +1,21 @@
 #include "TablaHash.h"
 #include <iostream>
-#include <cmath> // Para las funciones matemáticas
+#include <cmath>
 
 using namespace std;
 
 TablaHash::TablaHash(int t) {
     colisiones = 0;
     tam = t;
-    tabla = new int[tam]; // Pides memoria
+    tabla = new int[tam];
     elementos = 0;
     for (int i = 0; i < tam; i++)
-        tabla[i] = -1; // -1 significa vacío
+        tabla[i] = -1; // -1: vacÃ­o
 }
 
-// ¡Importante! Si usas 'new', debes usar 'delete'
+// Si se usa 'new', se debe usar 'delete'
 TablaHash::~TablaHash() {
-    delete[] tabla; // Liberas la memoria
+    delete[] tabla; // Liberar memoria
 }
 
 int TablaHash::funcionHash(int clave) {
@@ -42,10 +42,10 @@ float TablaHash::factorCarga() {
 }
 
 void TablaHash::insertar(int clave) {
-    // Usas sondeo lineal
+    // Sondeo lineal
     int pos = funcionHash2(clave);
     int intentos = 0;
-    while (tabla[pos] != -1 && intentos < tam) { // -1 es vacío
+    while (tabla[pos] != -1 && intentos < tam) {
         pos = (pos + 1) % tam;
         intentos++;
         if (intentos > 1) { // Solo cuenta si no es el primer intento
@@ -75,5 +75,4 @@ void TablaHash::imprimir() {
     }
 }
 
-// ¡¡NO HAY MAIN AQUÍ!!
 
